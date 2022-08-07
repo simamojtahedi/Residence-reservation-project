@@ -1,0 +1,202 @@
+
+
+.header {
+    background-color: #E1DFCE;
+    position: relative;
+
+    .bg_circles {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 600px;
+        z-index: 0;
+        opacity: .03;
+    }
+
+    .bg_circles_2 {
+        position: absolute;
+        right: 160px;
+        top: 90px;
+        width: 600px;
+        z-index: 0;
+        opacity: .02;
+    }
+
+    .container {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        height: calc(100vh - 70px);
+        padding: 1rem 0 0;
+    }
+
+    .content_container {
+        display: flex;
+        align-items: center;
+        padding-top: 1.8rem;
+        position: relative;
+        z-index: 100;
+
+        .main_content {
+            flex: 2;
+            margin-left: 8rem;
+
+            h1 {
+                margin: 0;
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.9;
+                width: 100%;
+                text-align: justify;
+            }
+
+            .actions {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-top: 2rem;
+                z-index: 100;
+
+                a {
+                    margin-right: 2rem;
+                    font-size: 1rem;
+                    display: flex;
+                    align-items: center;
+
+                    &:last-of-type {
+                        padding: .4rem 3rem;
+                        border-radius: 5px;
+                        background-color: #0D9543;
+                        color: #fff;
+                    }
+
+                    svg {
+                        font-size: .8rem;
+                        margin-left: .3rem;
+                    }
+                }
+            }
+        }
+
+        .main_image {
+            flex: 2;
+            height: 450px;
+            position: relative;
+            &::after {
+                content: url(/images/dots.png);
+                position: absolute;
+                right: -50px;
+                top: -20px;
+                opacity: .5;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                left: -40px;
+                bottom: -50px;
+                opacity: .5;
+                background-color: hsl(144, 84%, 32%);
+                z-index: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 2;
+                position: relative;
+                border-radius: 20px 130px 20px 20px;
+            }
+        }
+    }
+    
+    .contact_us {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100px;
+        position: relative;
+        direction: ltr;
+
+        h5 {
+            font-size: 1.3rem;
+        }
+
+        .line {
+            width: 20rem;
+            height: 1px;
+            background-color: #b7b7b7;
+            margin: 0;
+            margin-left: 1rem;
+        }
+
+        .items {
+            display: flex;
+            flex: 1;
+
+            div {
+                margin: 0 2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                svg {
+                    font-size: 2.2rem !important;
+                    margin-bottom: .3rem;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .mouse {
+            height: 45px;
+            width: 30px;
+            background-color: transparent;
+            border: 3px solid #4c4c4c;
+            border-radius: 50px 50px 50px 50px;
+            position: relative;
+            margin-bottom: 10px;
+            &::after {
+                content: '';
+                position: absolute;
+                left: calc(50% - 1.5px);
+                width: 3px;
+                height: 10px;
+                border-radius: 50px;
+                background-color: #4c4c4c;
+                animation: mouse 2.5s infinite linear;
+            }
+        }
+
+        div {
+            height: 200px;
+            width: 1px;
+            background-color: #b7b7b7;
+            position: relative;
+            right: 42%;
+        }
+    }
+}
+
+
+@keyframes mouse {
+    0% {top: 7px;}
+    50% {top: 25px;}
+    100% {top: 7px;}
+}

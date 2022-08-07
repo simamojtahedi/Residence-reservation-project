@@ -1,0 +1,53 @@
+@font-face {
+	font-family: "primary-font";
+	src: url("../public/fonts/aviny-700.eot");
+	src: url("../public/fonts/aviny-700.eot?#iefix") format("embedded-opentype"),
+		 url("../public/fonts/aviny-700.woff2") format("woff2"),
+		 url("../public/fonts/aviny-700.woff") format("woff"),
+		 url("../public/fonts/aviny-700.ttf") format("truetype");
+	font-weight: 700;
+}
+
+body {
+  padding: 0 !important; 
+  margin: 0 !important;
+  font-family: 'primary-font', sans-serif !important;
+  direction: rtl !important;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.swiper-pagination {
+  border-radius: 0 !important;
+  height: auto !important;
+  box-shadow: none !important;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.swiper-pagination::after {
+  background: none !important;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.MuiFormControl-root {
+  width: 100% !important;
+}
+
+.MuiInputBase-root {
+  width: 100% !important;
+  padding: .1rem !important;
+  border-radius: 10px !important;
+}

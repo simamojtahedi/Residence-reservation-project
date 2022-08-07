@@ -1,0 +1,61 @@
+
+.header {
+    background-color: #E1DFCE;
+    padding: .2rem 1rem;
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    .header_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-left: 1.5rem;
+
+            a {
+                font-size: .95rem;
+                font-weight: bold;
+                color: #222;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -6px;
+                    right: 0;
+                    width: 0;
+                    height: 3px;
+                    border-radius: 50px;
+                    background-color: #0d9543;
+                    transition: all .3s;
+                }
+
+                &:hover {
+                    &::after {
+                        width: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .account {
+        background-color: #262632;
+        padding: .6rem 1.5rem;
+        border-radius: 10px;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #fff;
+    }
+}

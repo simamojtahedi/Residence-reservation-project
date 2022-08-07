@@ -1,0 +1,31 @@
+
+
+.main_title {
+    width: 100%;
+    margin: 3rem 0 2rem;
+    display: flex;
+    align-items: center;
+
+    h4 {
+        font-size: 1.6rem;
+        margin: 0;
+        margin-left: 1.5rem;
+    }
+
+    div {
+        flex: 1;
+        height: 1px;
+        background-color: #eee;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -2.5px;
+            width: 80px;
+            height: 5px;
+            background-color: #0D9543;
+            border-radius: 50px;
+        }
+    }
+}

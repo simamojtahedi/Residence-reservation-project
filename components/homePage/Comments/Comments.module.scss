@@ -1,0 +1,111 @@
+
+
+.comments_container {
+    width: 100%;
+    margin: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    img {
+        width: 900px;
+        opacity: .6;
+    }
+    
+    .comment_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(197, 197, 197);
+        padding-bottom: .3rem;
+
+        span {
+            font-size: .9rem;
+            &:last-of-type {
+                color: #777;
+            }
+        }
+    }
+    
+    p {
+        font-size: .8rem;
+    }
+
+    .comment_1, .comment_2, .comment_3, .comment_4 {
+        background-color: #F5F5F3;
+        border: 1px solid #e6e6e6;
+        position: absolute;
+        padding: .5rem 1rem;
+        width: 300px;
+        border-radius: 3px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: calc(50% - 8px);
+            top: -50px;
+            border-radius: 50%;
+            background-color: #0D9543;
+            animation: dot 2.5s infinite linear;
+        }
+    
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 50px;
+            left: calc(50%);
+            top: -50px;
+            background-color: #0D9543;
+        }
+    }
+
+    .comment_3, .comment_4 {
+        &::after {
+            left: -50px;
+            top: calc(50% - 8px);
+        }
+    
+        &::before {
+            width: 50px;
+            height: 1px;
+            left: -50px;
+            top: calc(50%);
+        }
+    }
+
+    .comment_3 {
+        &::after { right: -50px; }
+        &::before { right: -50px; }
+    }
+
+    .comment_1 {
+        right: 48%;
+        top: 17%;
+    }
+
+    .comment_2 {
+        right: 26%;
+        top: 56%;
+    }
+
+    .comment_3 {
+        right: 68%;
+        top: 60%;
+    }
+
+    .comment_4 {
+        right: 3%;
+        top: 10%;
+    }
+}
+
+@keyframes dot {
+    0% {box-shadow: 0 0 5px rgba(0,0,0,.2)}
+    50% {box-shadow: 0 0 5px rgba(0,0,0,1)}
+    100% {box-shadow: 0 0 5px rgba(0,0,0,.2)}
+}

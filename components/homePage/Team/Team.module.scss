@@ -1,0 +1,86 @@
+
+
+.teams_container {
+    margin: 3rem 0;
+
+    .team {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .team_member {
+            background-color: #fff;
+            margin: 0 .5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: .5rem;
+            border-radius: 25px 25px 10px 10px;
+            border: 1px solid #eee;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 5%;
+                bottom: -4px;
+                width: 90%;
+                height: 4px;
+                background-color: #DFDCCB;
+                border-radius: 50px;
+                transition: all .4s;
+            }
+
+            img {
+                width: 99%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 25px;
+            }
+
+            &:hover {
+                &::after {
+                    left: 25%;
+                    width: 50%;
+                }
+            }
+
+            h6 {
+                font-size: 1rem;
+                margin: .5rem;
+            }
+
+            .member_info {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                width: 100%;
+                margin-bottom: .8rem;
+
+                span {
+                    font-size: .8rem;
+                    position: relative;
+                    color: #666;
+    
+                    &::after , &::before {
+                        content: '';
+                        position: absolute;
+                        left: -70px;
+                        top: 12px;
+                        width: 60px;
+                        height: 1px;
+                        background-color: #eee;
+                    }
+
+                    &::before {
+                        right: -70px;
+                    }
+                }
+            }
+        }
+    }
+}

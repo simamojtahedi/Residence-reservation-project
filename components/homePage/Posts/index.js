@@ -7,7 +7,6 @@ import Title from "../../common/title";
 import Link from "next/link";
 
 const Posts = (props) => {
-    console.log(props)
     return (
         <div>
             <Title> اتــاق‌ها </Title>
@@ -22,7 +21,7 @@ const Posts = (props) => {
                 modules={[Pagination]}
                 className={styles.posts}
             >
-                {props.posts.data.docs.map(item => (
+                {props.posts.data.docs?.map(item => (
                     <SwiperSlide className={styles.post} key={item._id}>
                         <div className={styles.post_image}>
                             <img src={item.coverImage} />
@@ -34,7 +33,7 @@ const Posts = (props) => {
                             </p>
                             <div className={styles.actions}>
                                 <h5>{item.briefText}</h5>
-                                <Link href='/'><a>جزئیــات</a></Link>
+                                <Link href={`/room/${item.hashId}/${item.slug}`}><a>جزئیــات</a></Link>
                             </div>
                         </div>
                     </SwiperSlide>

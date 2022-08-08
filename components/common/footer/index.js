@@ -23,7 +23,7 @@ const Footer = () => {
                     </div>
                     <div className={styles.footer_social}>
                         <h6>شبکه های اجتماعی</h6>
-                        <div>
+                        <div className={styles.res_social}>
                             <div><AiOutlineInstagram /><span>@bermooda</span></div>
                             <div><RiTelegramLine /><span>@bermooda</span></div>
                             <div><AiOutlineYoutube /><span>@bermooda</span></div>

@@ -24,7 +24,7 @@ const Team = () => {
                 <div className={styles.member_info}><span>مسئول آشپزی</span></div>
             </div>
             <div className={styles.team_member}>
-                <img src='https://celebrity.land/en/wp-content/uploads/2022/05/Todays-famous-birthdays-list-for-May-27-2022-includes-celebrity.jpg' />
+                <img src='https://www.masslive.com/resizer/kNl3qvErgJ3B0Cu-WSBWFYc1B8Q=/arc-anglerfish-arc2-prod-advancelocal/public/W5HI6Y4DINDTNP76R6CLA5IWRU.jpeg' />
                 <h6>احمدرضا عابدزاده</h6>
                 <div className={styles.member_info}><span>مسئول رفت و آمد</span></div>
             </div>

@@ -16,8 +16,8 @@ const Header = () => {
           <ul>
             <li><Link href='/'><a>صفحــه اصلی</a></Link></li>
             <li><Link href='/rooms'><a>اتــاق‌ها</a></Link></li>
-            <li><Link href='/'><a>دربــاره ما</a></Link></li>
-            <li><Link href='/'><a>تمــاس با ما</a></Link></li>
+            <li><Link href='/about-us'><a>دربــاره ما</a></Link></li>
+            <li><Link href='/contact-us'><a>تمــاس با ما</a></Link></li>
           </ul>
           <div>
             {user?.user ?

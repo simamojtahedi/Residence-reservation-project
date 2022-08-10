@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { TextField, Button } from '@mui/material'
-import { useAuthActions } from '../../context/AuthContext'
+import { useAuth, useAuthActions } from '../../context/AuthContext'
 import MainContainer from '../../containers/MainContainer'
 import Title from '../../components/common/title'
 import styles from './Signup.module.scss'
@@ -11,6 +11,7 @@ import Router from 'next/router'
 
 const SignUp = () => {
   const dispatch = useAuthActions()
+  const user = useAuth()
 
   const SignInSchema = Yup.object().shape({
       name: Yup.string().required('پر کردن این فیلد الزامی است'),

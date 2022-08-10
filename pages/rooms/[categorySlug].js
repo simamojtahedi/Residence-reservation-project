@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MainContainer from '../../containers/MainContainer'
 import Posts from '../../components/posts'
@@ -7,27 +7,63 @@ import Title from '../../components/common/title'
 import queryString from 'query-string'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Select from 'react-select';
+import { Pagination } from '@mui/material'
+
+const options = [
+  { label: 'پربازدیدترین', value: 'most' },
+  { label: 'محبوبترین', value: 'popular' },
+  { label: 'جدیدترین', value: 'newest' },
+];
 
 const CategoryPage = (props) => {
   const router = useRouter()
-  console.log(router.query.categorySlug)
+  const [sortOption, setSortOption] = useState(router.query.sort || 'newest');
+
+  const pageHandler = (page) => {
+    router.query.page = page
+    router.push(router)
+  }
+
+  useEffect(() => {
+    router.query.sort = sortOption.value;
+    router.push(router)
+  }, [sortOption])
 
     return (
       <MainContainer>
-          <div style={{padding: '0 4rem', marginTop: '50px'}}>
-            <Title> اتــاق‌ها </Title>
+        <div style={{padding: '0 4rem', marginTop: '50px'}}>
+          <Title> اتــاق‌ها </Title>
+          <div className={styles.rooms_header}>
             <div className={styles.categories}>
-            <Link href='/rooms' className={styles.category} ><a>همه اتاق‌ها</a></Link>
+              <Link href='/rooms'><a className={router.pathname === '/rooms' && styles.active_link}>همه اتاق‌ها</a></Link>
               {props.categories.data.map(category => (
-                <Link href={`/rooms/${category.englishTitle}`} className={styles.category} key={category._id}><a className={router.query.categorySlug === category.englishTitle && styles.active_link}>{category.title}</a></Link>
-              ))}
+                <Link href={`/rooms/${category.englishTitle}`} key={category._id}><a className={router.query.categorySlug === category.englishTitle && styles.active_link}>{category.title}</a></Link>
+                ))}
             </div>
-            <div className={styles.rooms_container}>
-              {props.posts.data.docs.map(item => (
-                  <Posts item={item}  key={item._id} />
-              ))}
+            <div className={styles.sort}>
+              <Select
+                defaultValue={sortOption}
+                onChange={setSortOption}
+                placeholder='مرتب سازی'
+                options={options}
+              />
             </div>
           </div>
+          <div className={styles.rooms_container}>
+            {props.posts.data.docs.map(item => (
+                <Posts item={item}  key={item._id} />
+            ))}
+          </div>
+        </div>
+        <div className={styles.pagination}>
+          <Pagination 
+            count={props.posts.data.totalPages} 
+            page={props.posts.data.page} 
+            onChange={pageHandler} 
+            dir='rtl' 
+          />
+        </div>
       </MainContainer>
     )
 }

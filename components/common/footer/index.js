@@ -1,5 +1,5 @@
-import { TextField, Button } from '@mui/material'
 import React from 'react'
+import { TextField, Button } from '@mui/material'
 import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai'
 import { RiTelegramLine } from 'react-icons/ri'
 import styles from './Footer.module.scss'

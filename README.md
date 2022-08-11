@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Project
+<br/>
+این پروژه از پایگاه داده mongo.db استفاده میکند و دارای امکانات زیر است :
+- صفحه اصلی
+- صفحه اتاق‌ها
+- صفحه اتاق تکی و توضیحات با امکان لایک و بوکمارک
+- صفحه درباره ما
+- صفحه تماس با ما
+- صفحه ورود و عضویت
+<br/>
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<table>
+  <tr>
+    <td valign="top" >
+      <img src="https://user-images.githubusercontent.com/64223524/184196500-e56c9219-3597-4468-af24-ec2891eb008d.png" width="500" />
+    </td>
+    <td valign="top">
+      <img src="https://user-images.githubusercontent.com/64223524/184196478-5fcb6007-4e5e-4584-97ff-294589a08d1b.png" width="500">
+    </td>
+  </tr>
+  
+  <tr>
+    <td valign="top" >
+      <img src="https://user-images.githubusercontent.com/64223524/184196776-ad23071e-d6dd-4596-917d-88152762588a.png" width="500" />
+    </td>
+    <td valign="top">
+      <img src="https://user-images.githubusercontent.com/64223524/184196487-21e20aa0-c5d4-4e3a-bc65-5d8298da41a5.png" width="500">
+    </td>
+  </tr>
+</table>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

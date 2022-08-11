@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { TextField, Button } from '@mui/material'
-import { useAuth, useAuthActions } from '../../context/AuthContext'
 import MainContainer from '../../containers/MainContainer'
 import Title from '../../components/common/title'
-import styles from './Signin.module.scss'
 import Link from 'next/link'
 import Router from 'next/router'
+import { userSignin } from '../../redux/user/userActions';
+import styles from './Signin.module.scss'
 
 const SignIn = () => {
-  const dispatch = useAuthActions()
-  const user = useAuth()
+  const user = useSelector(state => state.userSignin)
+  const dispatch = useDispatch()
 
   const SignInSchema = Yup.object().shape({
       email: Yup.string().required('پر کردن این فیلد الزامی است'),
@@ -26,13 +27,13 @@ const SignIn = () => {
     validateOnMount: true,
     validationSchema: SignInSchema,
     onSubmit: values => {
-      dispatch({type: "SIGNIN", payload: values})
+      dispatch(userSignin(values))
     },
   });
 
   useEffect(() => {
-    if(user?.user) Router.push('/')
-  }, [user])
+    if(user.user) Router.push('/')
+  }, [user.user])
 
   return (
     <MainContainer>

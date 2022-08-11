@@ -2,12 +2,13 @@
 import React from 'react'
 import Link from 'next/link'
 import Button from '@mui/material/Button';
-import { useAuth, useAuthActions } from '../../../context/AuthContext'
 import styles from './Header.module.scss'
+import { useSelector, useDispatch } from 'react-redux';
+import { userSignout } from '../../../redux/user/userActions';
 
 const Header = () => {
-  const user = useAuth()
-  const dispatch = useAuthActions()
+  const user = useSelector(state => state.userSignin)
+  const dispatch = useDispatch()
 
   return (
     <header className={styles.header}>
@@ -23,7 +24,7 @@ const Header = () => {
             {user?.user ?
               <div>
                 <Link href='/'><a className={styles.account}>{user?.user.name}</a></Link>
-                <Button onClick={() => dispatch({type: "SIGNOUT"})}>خروج</Button>
+                <Button onClick={() => dispatch(userSignout())}>خروج</Button>
               </div>
             :
               <Link href='/sign-in'><a className={styles.account}>ورود</a></Link>

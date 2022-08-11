@@ -6,8 +6,10 @@ import Posts from "../components/homePage/Posts";
 import MainContainer from "../containers/MainContainer";
 import Team from "../components/homePage/Team";
 import Aboutus from "../components/homePage/Aboutus";
+import { useSelector } from 'react-redux';
 
 export default function Home(props) {
+  const user = useSelector(state => state.userSignin)
 
   return (
     <MainContainer>

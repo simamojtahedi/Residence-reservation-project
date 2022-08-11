@@ -1,3 +1,5 @@
+import { wrapper } from "../redux/store";
+import { useStore } from 'react-redux'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import "swiper/css";
 import "swiper/css/pagination";
@@ -5,8 +7,9 @@ import "swiper/css/navigation";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../styles/globals.css'
-import AuthProvider from '../context/AuthContext';
 import { Toaster } from 'react-hot-toast';
+import { useEffect } from "react";
+import { loadUser } from "../redux/user/userActions";
 
 const theme = createTheme({
   direction: 'rtl',
@@ -19,7 +22,14 @@ const theme = createTheme({
 });
 
 function MyApp({ Component, pageProps }) {
-  return <ThemeProvider theme={theme}><AuthProvider><Component {...pageProps} /><Toaster /></AuthProvider></ThemeProvider>
+  const store = useStore()
+
+  useEffect(() => {
+    loadUser(store)
+  }, [])
+
+  return <ThemeProvider theme={theme}><Component {...pageProps} /><Toaster /></ThemeProvider>
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp);
+

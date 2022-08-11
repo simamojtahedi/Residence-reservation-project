@@ -23,8 +23,7 @@ const Header = () => {
           <div>
             {user?.user ?
               <div>
-                <Link href='/'><a className={styles.account}>{user?.user.name}</a></Link>
-                <Button onClick={() => dispatch(userSignout())}>خروج</Button>
+                <Button onClick={() => dispatch(userSignout())} className={styles.account}>{user?.user.name} | خروج</Button>
               </div>
             :
               <Link href='/sign-in'><a className={styles.account}>ورود</a></Link>

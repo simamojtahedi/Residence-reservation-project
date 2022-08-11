@@ -32,7 +32,7 @@ const CategoryPage = (props) => {
 
     return (
       <MainContainer>
-        <div style={{padding: '0 4rem', marginTop: '50px'}}>
+        <div className='p-4'>
           <Title> اتــاق‌ها </Title>
           <div className={styles.rooms_header}>
             <div className={styles.categories}>

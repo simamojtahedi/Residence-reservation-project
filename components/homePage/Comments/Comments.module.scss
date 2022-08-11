@@ -109,3 +109,56 @@
     50% {box-shadow: 0 0 5px rgba(0,0,0,1)}
     100% {box-shadow: 0 0 5px rgba(0,0,0,.2)}
 }
+
+@media (max-width: 700px) {
+    .comments_container {
+        margin: .5rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 90%;
+            opacity: .2;
+            position: absolute;
+            top: 30%;
+            right: 5%;
+        }
+
+        .comment_1, .comment_2, .comment_3, .comment_4 {
+            position: relative;
+            padding: .5rem;
+            width: 90%;
+            box-shadow: 0 0 8px rgba(0,0,0,.2);
+            margin: .5rem auto;
+
+            &::after {
+                display: none;
+            }
+        
+            &::before {
+                display: none;
+            }
+        }
+
+        .comment_1 {
+            right: 0%;
+            top: 0;
+        }
+
+        .comment_2 {
+            right: 0%;
+            top: 0%;
+        }
+
+        .comment_3 {
+            right: 0%;
+            top: 0%;
+        }
+
+        .comment_4 {
+            right: 0%;
+            top: 0%;
+        }
+    }
+}

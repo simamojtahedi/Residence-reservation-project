@@ -12,9 +12,10 @@ export default function Home(props) {
   const user = useSelector(state => state.userSignin)
 
   return (
+    <>
     <MainContainer>
       <HomePageHeader />
-      <div style={{padding: '0 4rem'}}>
+      <div className='p-4'>
         <Posts posts={props.posts} />
         <Categories categories={props.categories} />
         <Aboutus />
@@ -22,6 +23,7 @@ export default function Home(props) {
         <Comments />
       </div>
     </MainContainer>
+    </>
   )
 }
 

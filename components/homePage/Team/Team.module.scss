@@ -84,3 +84,51 @@
         }
     }
 }
+
+@media (max-width: 700px) {
+    .teams_container {
+        margin: 2rem 0;
+        padding: 0 !important;
+
+        .team {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+
+            .team_member {
+                margin: .5rem;
+
+                &::after {
+                    left: 10%;
+                    width: 80%;
+                }
+
+                img {
+                    height: 200px;
+                }
+
+                &:hover {
+                    &::after {
+                        left: 25%;
+                        width: 50%;
+                    }
+                }
+
+                h6 {
+                    font-size: .9rem;
+                    margin: .5rem 0 .3rem;
+                }
+
+                .member_info {
+                    height: auto;
+
+                    span {
+                        &::after , &::before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

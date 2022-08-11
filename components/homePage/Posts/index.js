@@ -11,15 +11,25 @@ const Posts = (props) => {
         <div>
             <Title> اتــاق‌ها </Title>
             <Swiper
-                slidesPerView={4}
-                spaceBetween={10}
-                slidesPerGroup={1}
+                
                 loop={true}
                 loopFillGroupWithBlank={true}
                 pagination={{ clickable: true }}
                 navigation={false}
                 modules={[Pagination]}
                 className={styles.posts}
+                breakpoints={{
+                    700: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        slidesPerGroup: 1
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 10,
+                        slidesPerGroup: 1
+                    },
+                  }}
             >
                 {props.posts.data.docs?.map(item => (
                     <SwiperSlide className={styles.post} key={item._id}>

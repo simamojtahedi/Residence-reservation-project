@@ -106,3 +106,63 @@
         }
     }
 }
+
+@media (max-width: 700px) {
+    .room_page {
+        padding: 1rem;;
+
+        .header_info {
+            width: 100%;
+            margin: 1rem auto 0 !important;
+        }
+    
+        .title {
+            font-size: 1.2rem;
+        }
+    
+        .room_cover {
+            flex-direction: column;
+            margin: 1rem 0;
+    
+            img {
+                width: 100%;
+                margin: auto;
+            }
+    
+            div {
+                span {
+                    font-size: .9rem;
+                }
+            }
+        }
+    
+        .content {
+            img {
+                width: 100%;
+                margin: .5rem auto 1rem;
+            }
+    
+            li {
+                margin: 1rem 0 !important;
+            }
+    
+            p {
+                margin: 2rem 0 1rem;
+            }
+        }
+    
+        .room_footer {
+            h5 {
+                font-size: 1.2rem;
+            }
+        }
+    
+        .actions {
+            button {
+                svg {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}

@@ -76,3 +76,42 @@
         }
     }
 }
+
+@media (max-width: 700px) {
+    .categories_contianer {
+        margin-top: 7rem;
+        flex-direction: column;
+        margin: 1rem 0;
+        padding: .5rem;
+
+        .cat_info {
+            h2 {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            a {
+                padding: .5rem 1.5rem;
+            }
+        }
+
+        .categories {
+            margin-right: 0rem;
+            margin-top: 1rem;
+        
+            .category {
+                padding: .6rem;
+                margin: .3rem;
+        
+                img {
+                    margin-left: 0;
+                }
+        
+                h6 {
+                    font-size: .75rem;
+                    margin-top: .3rem;
+                }
+            }
+        }
+    }
+}
